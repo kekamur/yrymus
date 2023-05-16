@@ -1,12 +1,33 @@
 {% extends 'main_na/layout.html' %}
 {% block title %}Настройки профиля{% endblock %}
 {% block content %}
-<form method="post" enctype="multipart/form-data">
-         {% csrf_token %}
-         {{ user_form.as_p }}
-         {{ form.as_p }}
-         <div class="d-grid gap-2 d-md-block mt-2">
-            <button type="submit" class="btn btn-dark">Подтвердить изменение профиля</button>
-         </div>
-      </form>
+    <div class="profile-edit">
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm">
+                        <button class="btn btn-dark">Назад</button>
+                        <button type="submit" class="btn btn-success">Подтвердить изменение профиля</button>
+                        {{ form.errors }}
+                    </div>
+                    <div class="col-sm">
+                        <p><label for="username">Никнейм:</label></p><br>
+                        <p><label for="first_name">Имя:</label></p><br>
+                        <p><label for="contacts">Контакты:</label></p><br>
+                        <p><label for="bio">О себе:</label></p><br>
+                        <p><label for="jenres">Жанры:</label></p><br>
+                    </div>
+                    <div class="col-sm">
+                        <p><input type="text" name="username" value="{{ user.username }}" maxlength="30"></p><br>
+                        <p><input type="text" name="first_name" value="{{ user.first_name }}" maxlength="40"></p><br>
+                        <p><input type="text" name="bio" value="{{ user.profile.bio }}" maxlength="40"></p><br>
+                        <p><input type="text" name="contacts" value="{{ user.profile.contacts }}" maxlength="40"></p><br>
+                        <p><input type="text" name="jenres" value="{{ user.profile.jenres }}" maxlength="40"></p><br>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 {% endblock %}

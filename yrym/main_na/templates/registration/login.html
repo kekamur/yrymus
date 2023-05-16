@@ -5,9 +5,9 @@
         <form action="" method="post" name="form">
             {% csrf_token %}
             <label for="username">Никнейм</label>
-            <input type="text" name="username" placeholder=""><br>
+            <input type="text" name="username" maxlength="30"><br>
             <label for="password">Пароль</label>
-            <input type="password" name="password" placeholder="">
+            <input type="password" name="password" maxlength="30">
             <button class="btn btn-info">Войти</button>
             {{ form.errors }}
         </form>

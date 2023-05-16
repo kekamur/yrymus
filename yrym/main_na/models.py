@@ -5,9 +5,9 @@ from django.dispatch import receiver
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=200, blank=True)
-    contacts = models.CharField(max_length=100, blank=True)
-    jenres = models.CharField(max_length=100, blank=True)
+    bio = models.CharField(max_length=50, blank=True)
+    contacts = models.CharField(max_length=50, blank=True)
+    jenres = models.CharField(max_length=50, blank=True)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

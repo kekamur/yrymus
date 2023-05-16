@@ -197,3 +197,20 @@ a, a:hover{
     transform: scale(1.05);
     transition:all 0.1s ease;
 }
+.profile-edit{
+    position: center;
+    width: 1398px;
+    height: 497px;
+    margin-top:65px;
+    background: #EAD7D7;
+    border-radius: 45px;
+}
+.profile-edit p{
+    margin-top:15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+}

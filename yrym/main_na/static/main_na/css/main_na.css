@@ -1,0 +1,194 @@
+body{
+    background:white;
+}
+.content{
+    margin-left:240px;
+    margin-right:240px;
+}
+.header{
+    width: 1440px;
+    height: 140px;
+}
+.header .logo{
+    position: absolute;
+    width: 190px;
+    height: 40px;
+    left: 288px;
+    top: 30px;
+}
+.header .title{
+    position: absolute;
+    width: 201px;
+    height: 40px;
+    left: 271px;
+    top: 100px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    letter-spacing: -0.005em;
+    color: #060505;
+}
+.header .menu{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+
+}
+.header .menu #reg{
+    position: absolute;
+    width: 227px;
+    height: 38px;
+    left: 1258px;
+    top: 40px;
+}
+.header .menu #home{
+    position: absolute;
+    width: 178px;
+    height: 36px;
+    left: 668px;
+    top: 40px;
+}
+a, a:hover{
+    text-decoration:none;
+    color: #060505;
+}
+.header .menu #news{
+    position: absolute;
+    width: 178px;
+    height: 36px;
+    left: 881px;
+    top: 40px;
+}
+.header .menu #auth{
+    position: absolute;
+    width: 87.7px;
+    height: 38.1px;
+    left: 1113.15px;
+    top: 40px;
+}
+.header .fa-magnifying-glass{
+    position: absolute;
+    width: 27.88px;
+    height: 42px;
+    left: 1516px;
+    top: 49px;
+}
+.header .fa-user{
+    position: absolute;
+    width: 39.29px;
+    height: 42px;
+    left: 1582px;
+    top: 49px;
+}
+.header .fa-arrow-right-from-bracket{
+    position: absolute;
+    width: 39.29px;
+    height: 42px;
+    left: 1582px;
+    top: 100px;
+}
+
+.main_photo{
+    background:grey;
+    position: absolute;
+    width: 1440px;
+    height: 600px;
+    left: 240px;
+    top: 248px;
+}
+.footer{
+    width: 1440px;
+    height: 140px;
+    margin-left:240px;
+    margin-right:240px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    color: #060505;
+}
+.footer #faq{
+    position: absolute;
+    width: 102.72px;
+    height: 38px;
+    left: 1320.64px;
+    top: 940px;
+}
+.footer #about{
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    left: 1495px;
+    top: 940px;
+}
+.profile_about{
+    position: center;
+    width: 1398px;
+    height: 497px;
+    margin-top:65px;
+    background: #EAD7D7;
+    border-radius: 45px;
+}
+.profile_about p{
+    margin-top:15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+}
+.profile_projects{
+    position: center;
+    width: 1398px;
+    height: 183px;
+    background: #EAD7D7;
+    border-radius: 45px;
+    margin-top:20px;
+}
+.login, .register{
+    margin-top:20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 700px;
+    width: 545px;
+    background: #D9D9D9;
+}
+.login label, .register label{
+    margin-top:70px;
+    margin-left:44px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 41px;
+    color: #000000;
+}
+.login input, .register input{
+    font-size: 34px;
+    margin-left:44px;
+    background-color:#D9D9D9;
+    margin-top:10px;
+    width:450px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+}
+.login button, .register button{
+    margin:auto;
+    display:block;
+    width:300px;
+    font-size:25px;
+    margin-top:60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+}

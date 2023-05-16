@@ -1,0 +1,17 @@
+{% extends "main_na/layout.html" %}
+{% block title %}Войти{% endblock %}
+{% block content %}
+    <div class="login">
+        <form action="" method="post" name="form">
+            {% csrf_token %}
+            <label for="username">Никнейм</label>
+            <input type="text" name="username" placeholder=""><br>
+            <label for="password">Пароль</label>
+            <input type="password" name="password" placeholder="">
+            <button class="btn btn-info">Войти</button>
+            {{ form.errors }}
+        </form>
+
+
+    </div>
+{% endblock %}

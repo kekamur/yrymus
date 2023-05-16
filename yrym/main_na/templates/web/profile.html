@@ -1,0 +1,31 @@
+{% extends 'main_na/layout.html' %}
+{% block title %}Профиль{% endblock %}
+{% block content %}
+    <div class="profile_about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+
+                </div>
+                <div class="col-sm">
+                    <p>Никнейм:</p><br>
+                    <p>Имя:</p><br>
+                    <p>Контакты:</p><br>
+                    <p>О себе:</p><br>
+                    <p>Жанры:</p><br>
+                </div>
+                <div class="col-sm">
+                    <p>{{ user.username }}</p><br>
+                    <p>{% if user.first_name %}user.first_name{% else %}<br>{% endif %}</p><br>
+                    <p>{% if user.profile.contacts %}user.profile.contacts{% else %}<br>{% endif %}</p><br>
+                    <p>{% if user.profile.bio %}user.profile.bio{% else %}<br>{% endif %}</p><br>
+                    <p>{% if user.profile.jenres %}user.profile.jenres{% else %}<br>{% endif %}</p><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="profile_projects">
+
+    </div>
+{% endblock %}

@@ -192,3 +192,8 @@ a, a:hover{
     font-style: normal;
     font-weight: 900;
 }
+
+.profile_about .fa-gear:hover{
+    transform: scale(1.05);
+    transition:all 0.1s ease;
+}

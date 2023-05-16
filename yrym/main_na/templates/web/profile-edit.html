@@ -1,0 +1,12 @@
+{% extends 'main_na/layout.html' %}
+{% block title %}Настройки профиля{% endblock %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ user_form.as_p }}
+         {{ form.as_p }}
+         <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-dark">Подтвердить изменение профиля</button>
+         </div>
+      </form>
+{% endblock %}

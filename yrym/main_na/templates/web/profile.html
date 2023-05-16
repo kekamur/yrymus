@@ -1,11 +1,11 @@
 {% extends 'main_na/layout.html' %}
-{% block title %}Профиль{% endblock %}
+{% block title %}{{ user.username }}{% endblock %}
 {% block content %}
     <div class="profile_about">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-
+                    <p><a href="{% url 'profile-edit' %}"><i class="fa-solid fa-gear"></i></a></p>
                 </div>
                 <div class="col-sm">
                     <p>Никнейм:</p><br>
@@ -16,10 +16,10 @@
                 </div>
                 <div class="col-sm">
                     <p>{{ user.username }}</p><br>
-                    <p>{% if user.first_name %}user.first_name{% else %}<br>{% endif %}</p><br>
-                    <p>{% if user.profile.contacts %}user.profile.contacts{% else %}<br>{% endif %}</p><br>
-                    <p>{% if user.profile.bio %}user.profile.bio{% else %}<br>{% endif %}</p><br>
-                    <p>{% if user.profile.jenres %}user.profile.jenres{% else %}<br>{% endif %}</p><br>
+                    <p>{% if user.first_name %}{{ user.first_name }}{% else %}<br>{% endif %}</p><br>
+                    <p>{% if user.profile.contacts %}{{ user.profile.contacts }}{% else %}<br>{% endif %}</p><br>
+                    <p>{% if user.profile.bio %}{{ user.profile.bio }}{% else %}<br>{% endif %}</p><br>
+                    <p>{% if user.profile.jenres %}{{ user.profile.jenres }}{% else %}<br>{% endif %}</p><br>
                 </div>
             </div>
         </div>

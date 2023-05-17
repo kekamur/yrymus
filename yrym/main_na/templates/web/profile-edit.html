@@ -11,15 +11,15 @@
                         <button type="submit" class="btn btn-success">Подтвердить изменение профиля</button>
                         {{ form.errors }}
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm labels">
                         <p><label for="username">Никнейм:</label></p><br>
                         <p><label for="first_name">Имя:</label></p><br>
-                        <p><label for="contacts">Контакты:</label></p><br>
                         <p><label for="bio">О себе:</label></p><br>
+                        <p><label for="contacts">Контакты:</label></p><br>
                         <p><label for="jenres">Жанры:</label></p><br>
                     </div>
-                    <div class="col-sm">
-                        <p><input type="text" name="username" value="{{ user.username }}" maxlength="30"></p><br>
+                    <div class="col-sm inputs">
+                        <p class="input-top"><input type="text" name="username" value="{{ user.username }}" maxlength="30"></p><br>
                         <p><input type="text" name="first_name" value="{{ user.first_name }}" maxlength="40"></p><br>
                         <p><input type="text" name="bio" value="{{ user.profile.bio }}" maxlength="40"></p><br>
                         <p><input type="text" name="contacts" value="{{ user.profile.contacts }}" maxlength="40"></p><br>

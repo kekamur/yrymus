@@ -142,7 +142,7 @@ a, a:hover{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
-    font-size: 32px;
+    font-size: 25px;
     line-height: 39px;
     color: #000000;
 }
@@ -205,12 +205,18 @@ a, a:hover{
     background: #EAD7D7;
     border-radius: 45px;
 }
-.profile-edit p{
+.profile-edit .labels{
     margin-top:15px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
-    font-size: 32px;
+    font-size: 30px;
     line-height: 39px;
     color: #000000;
 }
+.profile-edit input{
+    margin-top:9px;
+    font-size: 25px;
+    line-height: 39px;
+}
+

@@ -6,6 +6,7 @@
             <div class="row">
                 <div class="col-sm">
                     <p><a href="{% url 'profile-edit' %}"><i class="fa-solid fa-gear"></i></a></p>
+                    <img src="{{ user.profile.avatar.url }}" alt="" class="avatar">
                 </div>
                 <div class="col-sm">
                     <p>Никнейм:</p><br>

@@ -2,6 +2,28 @@
 {% block title %}Главная{% endblock %}
 {% block content %}
     <div class="main_photo">
+        {% for post in feed %}
+            <div class="Post container rounded-pill">
+                <div class="row content">
+                    <div class="col-3">
+                        <img src="{{ post.cover.url }}" alt="" class="song_cover">
+                    </div>
+                    <div class="col">
+                        <div class="row">   <h3 class="song_title">{{ post.title }}</h3>   </div>
+                        <div class="row">   <h3 class="song_desc"> {{ post.desc }}</h3>   </div>
+                        <div class="row">   <audio controls src="{{ post.audiofile.url }}" class='song_audio'></audio>  </div>
+                    </div>
+                </div>
+                <div class="row content">
 
+                    <div class="col-6 song_date">
+                        <h5 class="song_date"> {{ post.date }} </h5>
+                    </div>
+                </div>
+
+
+
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

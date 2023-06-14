@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Profile
-from django.forms import ModelForm
+from .models import Profile,Posts
+from django.forms import ModelForm, TextInput, FileInput
 from django import forms
 
 class ProfileUpdateForm(ModelForm):
@@ -10,7 +10,7 @@ class ProfileUpdateForm(ModelForm):
     """
     class Meta:
         model = Profile
-        fields = ('bio', 'contacts', 'jenres')
+        fields = ('bio', 'contacts', 'jenres', 'avatar')
 
     def __init__(self, *args, **kwargs):
         """
@@ -52,3 +52,31 @@ class UserUpdateForm(ModelForm):
         if email and User.objects.filter(email=email).exclude(username=username).exists():
             raise forms.ValidationError('Email адрес должен быть уникальным')
         return email
+
+class PostsForm(ModelForm):
+
+    class Meta:
+        model = Posts
+        fields= ['title','desc','cover','audiofile']
+
+        widgets={
+             'title': TextInput(attrs={
+                 'class':'form-control form-control-lg',
+                 'placeholder': 'Название'
+             }),
+             'desc': TextInput(attrs={
+                 'class': 'form-control form-control-lg',
+                 'placeholder': 'Описание'
+             }),
+            'cover': FileInput(attrs={
+                'class': 'form-control',
+                'type':'file',
+                'id':'CoverInput'
+            }),
+            'audiofile':FileInput(attrs={
+                'class': 'form-control',
+                'type': 'file',
+                'id': 'AudioInput'
+            })
+
+        }

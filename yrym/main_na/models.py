@@ -8,7 +8,7 @@ class Profile(models.Model):
     bio = models.CharField(max_length=50, blank=True)
     contacts = models.CharField(max_length=50, blank=True)
     jenres = models.CharField(max_length=50, blank=True)
-
+    avatar = models.ImageField(upload_to='images/', default='images/user.png')
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -17,3 +17,17 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+class Posts(models.Model):
+    title = models.CharField('Название', max_length=50)
+    desc = models.CharField('Описание', max_length=300)
+    cover = models.ImageField(upload_to='images/',default='images/user.png')
+    audiofile = models.FileField(upload_to='audio/',default='audio/default.mp3')
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name='Пост'
+        verbose_name_plural='Посты'
+

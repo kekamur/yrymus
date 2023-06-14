@@ -95,13 +95,41 @@ a, a:hover{
 }
 
 .main_photo{
-    background:grey;
     position: absolute;
     width: 1440px;
-    height: 600px;
     left: 240px;
     top: 248px;
 }
+.main_photo .Post{
+    background:#c9aac6;
+    margin-top:20px;
+
+}
+.main_photo .Post .content{
+    margin-left:150px;
+}
+.main_photo .Post .content .song_cover{
+    margin-top:10px;
+    max-height: 300px;
+    max-width: 400px;
+    width: 240px;
+    height: 240px;
+}
+
+.main_photo .Post .content .song_title, .main_photo .Post .content .song_desc, .main_photo .Post .content .song_audio{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    margin-top:20px;
+    margin-left:100px;
+}
+.song_date{
+    font-size:1em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+}
+
 .footer{
     width: 1440px;
     height: 140px;
@@ -220,3 +248,9 @@ a, a:hover{
     line-height: 39px;
 }
 
+.avatar{
+    max-height: 300px;
+    max-width: 400px;
+    width: 240px;
+    height: 240px;
+}

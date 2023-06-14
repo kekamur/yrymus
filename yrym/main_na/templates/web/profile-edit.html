@@ -8,7 +8,9 @@
                 <div class="row">
                     <div class="col-sm">
                         <button class="btn btn-dark">Назад</button>
-                        <button type="submit" class="btn btn-success">Подтвердить изменение профиля</button>
+                        <button type="submit" class="btn btn-success">Подтвердить изменение профиля</button><br><br>
+                        <img src="{{ user.profile.avatar.url }}" alt="" class="avatar">
+                        <p><input type="file" name="avatar" maxlength="40"></p><br>
                         {{ form.errors }}
                     </div>
                     <div class="col-sm labels">
@@ -19,11 +21,14 @@
                         <p><label for="jenres">Жанры:</label></p><br>
                     </div>
                     <div class="col-sm inputs">
+
                         <p class="input-top"><input type="text" name="username" value="{{ user.username }}" maxlength="30"></p><br>
                         <p><input type="text" name="first_name" value="{{ user.first_name }}" maxlength="40"></p><br>
                         <p><input type="text" name="bio" value="{{ user.profile.bio }}" maxlength="40"></p><br>
                         <p><input type="text" name="contacts" value="{{ user.profile.contacts }}" maxlength="40"></p><br>
                         <p><input type="text" name="jenres" value="{{ user.profile.jenres }}" maxlength="40"></p><br>
+
+
                     </div>
                 </div>
             </form>

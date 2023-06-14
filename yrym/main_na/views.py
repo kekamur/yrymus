@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import ProfileUpdateForm, UserUpdateForm,Profile
+from .forms import ProfileUpdateForm, UserUpdateForm,Profile,PostsForm
 from django.http import  HttpResponse
 from django.urls import reverse_lazy
 from django.contrib.auth import *
@@ -7,14 +7,32 @@ from django import forms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.db import transaction
 from django.contrib.auth.forms import UserCreationForm
+from .models import Posts
 # Create your views here.
 def index(request):
-    return render(request,'main_na/main_na.html')
+    feed = Posts.objects.order_by('-date')[:10]
+    return render(request,'main_na/main_na.html', {'feed':feed} )
 
 @decorators.login_required
 def profile_view(request):
     return render(request,'web/profile.html')
 
+def new(request):
+    error = ''
+    if request.method=='POST':
+        form = PostsForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            error = 'Форма заполнена неправильно'
+
+    form = PostsForm()
+    data = {
+        'form': form,
+        'error' : error
+    }
+    return render(request,'main_na/new.html',data)
 
 class RegisterView(FormView):
     form_class = UserCreationForm

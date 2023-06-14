@@ -66,7 +66,7 @@ class PostsForm(ModelForm):
              }),
              'desc': TextInput(attrs={
                  'class': 'form-control form-control-lg',
-                 'placeholder': 'Описание'
+                 'placeholder': 'Автор'
              }),
             'cover': FileInput(attrs={
                 'class': 'form-control',

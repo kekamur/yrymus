@@ -58,7 +58,6 @@ class PostsForm(ModelForm):
     class Meta:
         model = Posts
         fields= ['title','desc','cover','audiofile']
-
         widgets={
              'title': TextInput(attrs={
                  'class':'form-control form-control-lg',
@@ -66,7 +65,7 @@ class PostsForm(ModelForm):
              }),
              'desc': TextInput(attrs={
                  'class': 'form-control form-control-lg',
-                 'placeholder': 'Автор'
+                 'placeholder': 'Описание'
              }),
             'cover': FileInput(attrs={
                 'class': 'form-control',

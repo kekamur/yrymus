@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/14d1eef680.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header">
+    <div class="header container">
         <a href="{% url 'home' %}"><img src="{% static 'main_na/img/logo.svg' %}" alt="" class="logo">
             <h4 class="title">YRYMUS</h4></a>
         <div class="menu">
@@ -25,6 +25,7 @@
                 <h4 id="auth"><a href="{% url 'login' %}">Вход</a></h4>
                 <h4 id="reg"><a href="{% url 'register' %}">Регистрация</a></h4>
             {% else %}
+                <a href="{% url 'new' %}"><i class="fa-solid fa-circle-plus newpost_button" style="color: #c9aac6;"></i></a>
                 <a href="{% url 'profile' %}"><i class="fa-solid fa-user" style="color: #060505;"></i></a>
                 <a title="Выйти" href="{% url 'logout' %}?next=/"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #060505;"></i></a>
             {% endif %}
@@ -34,15 +35,12 @@
         <a href="{% url 'home' %}"><i class="fa-solid fa-magnifying-glass" style="color: #060505;"></i></a>
 
     </div>
-    <div class="content">
+    <div class="content container">
         {% block content %}
 
         {% endblock %}
     </div>
 
-    <div class="footer menu">
-        <a href="{% url 'home' %}"><h4 id="faq">FAQ</h4></a>
-        <a href="{% url 'home' %}"><h4 id="about">О нас</h4></a>
-    </div>
+
 </body>
 </html>

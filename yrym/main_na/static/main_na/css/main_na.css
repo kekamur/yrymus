@@ -13,7 +13,7 @@ body{
     position: absolute;
     width: 190px;
     height: 40px;
-    left: 288px;
+    left: 277px;
     top: 30px;
 }
 .header .title{
@@ -93,7 +93,12 @@ a, a:hover{
     left: 1582px;
     top: 100px;
 }
-
+.newpost_button{
+    position: absolute;
+    font-size:45px;
+    left: 1400px;
+    top: 30px;
+}
 .main_photo{
     position: absolute;
     width: 1440px;
@@ -116,12 +121,23 @@ a, a:hover{
     height: 240px;
 }
 
-.main_photo .Post .content .song_title, .main_photo .Post .content .song_desc, .main_photo .Post .content .song_audio{
+.main_photo .Post .content .song_title, .main_photo .Post .content .song_audio,
+.main_photo .Post .content .song_author{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
     margin-top:20px;
     margin-left:100px;
+}
+.main_photo .Post .content .song_title{
+    font-weight: 800;
+}
+.main_photo .Post .content .song_desc{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    margin-top:20px;
+    text-align:right;
 }
 .song_date{
     font-size:1em;
@@ -130,33 +146,7 @@ a, a:hover{
     font-weight: 200;
 }
 
-.footer{
-    width: 1440px;
-    height: 140px;
-    margin-left:240px;
-    margin-right:240px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 200;
-    font-size: 34px;
-    line-height: 41px;
-    text-align: center;
-    color: #060505;
-}
-.footer #faq{
-    position: absolute;
-    width: 102.72px;
-    height: 38px;
-    left: 1320.64px;
-    top: 940px;
-}
-.footer #about{
-    position: absolute;
-    width: 120px;
-    height: 40px;
-    left: 1495px;
-    top: 940px;
-}
+
 .profile_about{
     position: center;
     width: 1398px;

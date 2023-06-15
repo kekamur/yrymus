@@ -9,6 +9,7 @@ class Profile(models.Model):
     contacts = models.CharField(max_length=50, blank=True)
     jenres = models.CharField(max_length=50, blank=True)
     avatar = models.ImageField(upload_to='images/', default='images/user.png')
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -19,6 +20,7 @@ def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
 class Posts(models.Model):
+    author = models.ForeignKey(User,on_delete=models.CASCADE)
     title = models.CharField('Название', max_length=50)
     desc = models.CharField('Описание', max_length=300)
     cover = models.ImageField(upload_to='images/',default='images/user.png')

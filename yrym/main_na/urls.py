@@ -11,4 +11,7 @@ urlpatterns = [
     path('register',views.RegisterView.as_view(),name='register'),
     path('edit-profile', views.ProfileEditView.as_view(), name='profile-edit'),
     path('new',views.new,name='new'),
+    path('<int:pk>', views.ProfileDetailView.as_view(),name='profile-detail'),
+    path('search', views.SearchResultsView.as_view(), name='search_results'),
+    path('about', views.about,name='about')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

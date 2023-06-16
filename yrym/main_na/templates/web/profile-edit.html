@@ -9,7 +9,7 @@
                     <div class="col-sm">
                         <button class="btn btn-dark">Назад</button>
                         <button type="submit" class="btn btn-success">Подтвердить изменение профиля</button><br><br>
-                        <img src="{{ user.profile.avatar.url }}" alt="" class="avatar">
+                        <img src="{{ user.profile.avatar.url }}" alt="" class="avatar rounded-pill">
                         <p><input type="file" name="avatar" maxlength="40"></p><br>
                         {{ form.errors }}
                     </div>

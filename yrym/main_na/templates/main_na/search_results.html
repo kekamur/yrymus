@@ -1,0 +1,40 @@
+{% extends 'main_na/layout.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+
+    <div class="main_photo">
+        <h2>Результаты по поиску {{ query }}:</h2><br>
+
+        {% if object_list %}
+            {% for post in object_list %}
+                <div class="Post container rounded-pill">
+                    <div class="row content">
+                        <div class="col-3">
+                            <img src="{{ post.cover.url }}" alt="" class="song_cover">
+                        </div>
+                        <div class="col">
+                            <div class="row">   <h3 class="song_title">{{ post.title }}</h3>   </div>
+                            <div class="row"><a href="{% url 'home' %}{{ post.author.id}}"><h3 class="song_author">{{ post.author.username }}</h3></a>     </div>
+
+                            <div class="row">   <audio controls src="{{ post.audiofile.url }}" class='song_audio'></audio>  </div>
+
+                        </div>
+                    </div>
+                    <div class="row content">
+
+                        <div class="col-1 song_date">
+                            <h5 class="song_date"> {{ post.date }} </h5>
+                        </div>
+                        <div class="col-11">
+                            <h3 class="song_desc"> {{ post.desc }}</h3>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+        <h1>Нет результатов</h1>
+        {% endif %}
+
+    </div>
+{% endblock %}

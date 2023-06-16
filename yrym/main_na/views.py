@@ -5,11 +5,13 @@ from django.urls import reverse_lazy
 from django.contrib.auth import *
 from django import forms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.views.generic import DetailView, ListView
 from django.db import transaction
 from django.contrib.auth.forms import UserCreationForm
 from .models import Posts
-
-
+from django.db.models import Q
+from django.views.decorators.cache import never_cache
+from django.utils.decorators import method_decorator
 
 
 # Create your views here.
@@ -19,7 +21,18 @@ def index(request):
 
 @decorators.login_required
 def profile_view(request):
-    return render(request,'web/profile.html')
+    feed = Posts.objects.order_by('-date')[:10]
+    return render(request,'web/profile.html', {'feed':feed} )
+
+class ProfileDetailView(DetailView):
+    model = Profile
+    template_name = 'web/profile_detail_view.html'
+    context_object_name = 'detailprofile'
+    def get_context_data(self, *, object_list=None, **kwargs):
+        object_list = Posts.objects.order_by('-date')
+        context = super().get_context_data(**kwargs)
+        context['feed'] = object_list
+        return context
 
 @decorators.login_required
 def new(request):
@@ -84,3 +97,21 @@ class ProfileEditView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('profile')
+
+class SearchResultsView(ListView):
+    template_name = 'main_na/search_results.html'
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Posts.objects.filter(
+            Q(title__icontains=query) | Q(author__username__icontains=query)
+        )
+        return object_list[:20]
+    def get_context_data(self, *, object_list=None, **kwargs):
+        object_list = self.request.GET.get('q')
+        context = super().get_context_data(**kwargs)
+        context['query'] = object_list
+        return context
+
+
+def about(request):
+    return render(request,'main_na/about.html')

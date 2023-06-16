@@ -5,6 +5,7 @@ body{
     margin-left:240px;
     margin-right:240px;
 }
+
 .header{
     width: 1440px;
     height: 140px;
@@ -44,8 +45,8 @@ body{
     position: absolute;
     width: 227px;
     height: 38px;
-    left: 1258px;
-    top: 40px;
+    left: 1320px;
+    top: 100px;
 }
 .header .menu #home{
     position: absolute;
@@ -54,6 +55,12 @@ body{
     left: 668px;
     top: 40px;
 }
+.header .search{
+    margin-left:940px;
+    margin-right:60px;
+    margin-top:40px;
+}
+
 a, a:hover{
     text-decoration:none;
     color: #060505;
@@ -69,14 +76,14 @@ a, a:hover{
     position: absolute;
     width: 87.7px;
     height: 38.1px;
-    left: 1113.15px;
-    top: 40px;
+    left: 1435px;
+    top: 140px;
 }
 .header .fa-magnifying-glass{
     position: absolute;
     width: 27.88px;
     height: 42px;
-    left: 1516px;
+    left: 1525px;
     top: 49px;
 }
 .header .fa-user{
@@ -96,9 +103,13 @@ a, a:hover{
 .newpost_button{
     position: absolute;
     font-size:45px;
-    left: 1400px;
+    left: 1050px;
     top: 30px;
 }
+
+
+
+
 .main_photo{
     position: absolute;
     width: 1440px;
@@ -129,6 +140,7 @@ a, a:hover{
     margin-top:20px;
     margin-left:100px;
 }
+
 .main_photo .Post .content .song_title{
     font-weight: 800;
 }
@@ -136,15 +148,19 @@ a, a:hover{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
-    margin-top:20px;
+    margin-top:5px;
     text-align:right;
 }
-.song_date{
+.main_photo .Post .content .song_date{
     font-size:1em;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 200;
 }
+
+
+
+
 
 
 .profile_about{
@@ -166,12 +182,61 @@ a, a:hover{
 }
 .profile_projects{
     position: center;
-    width: 1398px;
-    height: 183px;
     background: #EAD7D7;
     border-radius: 45px;
-    margin-top:20px;
+    margin-top:100px;
+    width: 1440px;
+    left: 240px;
+    top: 248px;
 }
+
+
+.profile_about .fa-gear:hover{
+    transform: scale(1.05);
+    transition:all 0.1s ease;
+}
+.profile_projects .Post{
+    margin-top:80px;
+    background:#c9aac6;
+}
+.profile_projects .Post .content{
+    margin-left:150px;
+}
+.profile_projects .Post .content .song_cover{
+    margin-top:10px;
+    max-height: 300px;
+    max-width: 400px;
+    width: 240px;
+    height: 240px;
+}
+.profile_projects .Post .content .song_title, .profile_projects .Post .content .song_audio,
+.profile_projects .Post .content .song_author{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    margin-top:20px;
+    margin-left:100px;
+}
+.profile_projects .Post .content .song_title{
+    font-weight: 800;
+}
+.profile_projects .Post .content .song_desc{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    margin-top:5px;
+    text-align:right;
+}
+.profile_projects .Post .content .song_date{
+    font-size:1em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+}
+
+
+
+
 .login, .register{
     margin-top:20px;
     margin-left: auto;
@@ -211,10 +276,7 @@ a, a:hover{
     font-weight: 900;
 }
 
-.profile_about .fa-gear:hover{
-    transform: scale(1.05);
-    transition:all 0.1s ease;
-}
+
 .profile-edit{
     position: center;
     width: 1398px;
@@ -238,9 +300,45 @@ a, a:hover{
     line-height: 39px;
 }
 
-.avatar{
+.profile_about .avatar, .profile-edit .avatar{
     max-height: 300px;
     max-width: 400px;
     width: 240px;
     height: 240px;
+    object-fit: cover;
+    margin-left:20px
+
+}
+.detail-avatar{
+    object-fit: cover;
+    max-height: 300px;
+    max-width: 400px;
+    width: 240px;
+    height: 240px;
+    margin-top:70px;
+    margin-left:20px;
+
+}
+
+.about #yrymus{
+    margin-top:100px;
+    text-align:center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size:5em;
+}
+.about #desc{
+    margin-top:50px;
+    text-align:center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+}
+.about .logo{
+    width:600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:100px;
 }

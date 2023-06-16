@@ -1,0 +1,16 @@
+{% extends 'main_na/layout.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+    <div class="container about">
+        <div class="row">
+            <a href="{% url 'home' %}"><img src="{% static 'main_na/img/logo.svg' %}" alt="" class="logo"></a>
+        </div>
+        <div class="row">
+            <h1 id="desc">Web сервис для поиска новичками-музыкантами друг друга
+            с помощью публикации музыкальных работ для совместной работы и объединения.</h1>
+        </div>
+
+
+    </div>
+{% endblock %}

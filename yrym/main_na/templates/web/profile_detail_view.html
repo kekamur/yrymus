@@ -1,12 +1,12 @@
 {% extends 'main_na/layout.html' %}
-{% block title %}{{ user.username }}{% endblock %}
+{% block title %}{{ detailprofile.user.username }}{% endblock %}
+
 {% block content %}
-    <div class="profile_about">
+<div class="profile_about">
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <p><a href="{% url 'profile-edit' %}"><i class="fa-solid fa-gear"></i></a></p>
-                    <img src="{{ user.profile.avatar.url }}" alt="" class="avatar rounded-pill">
+                    <img src="{{ detailprofile.avatar.url }}" alt="" class="detail-avatar rounded-pill">
                 </div>
                 <div class="col-sm">
                     <p>Никнейм:</p><br>
@@ -16,19 +16,19 @@
                     <p>Жанры:</p><br>
                 </div>
                 <div class="col-sm">
-                    <p>{{ user.username }}</p><br>
-                    <p>{% if user.first_name %}{{ user.first_name }}{% else %}<br>{% endif %}</p><br>
-                    <p>{% if user.profile.contacts %}{{ user.profile.contacts }}{% else %}<br>{% endif %}</p><br>
-                    <p>{% if user.profile.bio %}{{ user.profile.bio }}{% else %}<br>{% endif %}</p><br>
-                    <p>{% if user.profile.jenres %}{{ user.profile.jenres }}{% else %}<br>{% endif %}</p><br>
+                    <p>{{ detailprofile.user.username }}</p><br>
+                    <p>{% if detailprofile.user.first_name %}{{ detailprofile.user.first_name }}{% else %}<br>{% endif %}</p><br>
+                    <p>{% if detailprofile.contacts %}{{ detailprofile.contacts }}{% else %}<br>{% endif %}</p><br>
+                    <p>{% if detailprofile.bio %}{{ detailprofile.bio }}{% else %}<br>{% endif %}</p><br>
+                    <p>{% if detailprofile.jenres %}{{ detailprofile.jenres }}{% else %}<br>{% endif %}</p><br>
                 </div>
             </div>
         </div>
 
     </div>
     <div class="profile_projects">
-            {% for post in feed %}
-            {% if post.author == request.user %}
+        {% for post in feed %}
+            {% if post.author == detailprofile.user %}
                 <div class="Post container rounded-pill">
                 <div class="row content">
                     <div class="col-3">
@@ -54,6 +54,6 @@
             {% endif %}
         {% endfor %}
 
-
     </div>
+
 {% endblock %}

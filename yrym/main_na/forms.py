@@ -75,7 +75,8 @@ class PostsForm(ModelForm):
             'audiofile':FileInput(attrs={
                 'class': 'form-control',
                 'type': 'file',
-                'id': 'AudioInput'
+                'id': 'AudioInput',
+                'accept': '.mp3'
             })
 
         }

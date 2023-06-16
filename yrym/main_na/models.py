@@ -20,16 +20,19 @@ def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
 class Posts(models.Model):
-    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField('Название', max_length=50)
     desc = models.CharField('Описание', max_length=300)
-    cover = models.ImageField(upload_to='images/',default='images/user.png')
-    audiofile = models.FileField(upload_to='audio/',default='audio/default.mp3')
+    cover = models.ImageField(upload_to='images/', default='images/user.png')
+    audiofile = models.FileField(upload_to='audio/', default='audio/default.mp3')
     date = models.DateTimeField(auto_now_add=True)
+    def formatted_date(self):
+        return self.date.strftime('%H:%M:%S')
 
-    def __str__(self):
+
+    def str(self):
         return self.title
-    class Meta:
-        verbose_name='Пост'
-        verbose_name_plural='Посты'
 
+    class Meta:
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Посты'

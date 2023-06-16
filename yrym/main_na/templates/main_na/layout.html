@@ -17,10 +17,12 @@
 <body>
     <div class="header container">
         <a href="{% url 'home' %}"><img src="{% static 'main_na/img/logo.svg' %}" alt="" class="logo">
-            <h4 class="title">YRYMUS</h4></a>
+
         <div class="menu">
             <h4 id="home"><a href="{% url 'home' %}">Главная</a></h4>
-            <h4 id="news"><a href="{% url 'home' %}">Новости</a></h4>
+            <h4 id="news"><a href="{% url 'about' %}">О нас</a></h4>
+
+
             {% if user.is_authenticated is False %}
                 <h4 id="auth"><a href="{% url 'login' %}">Вход</a></h4>
                 <h4 id="reg"><a href="{% url 'register' %}">Регистрация</a></h4>
@@ -31,8 +33,13 @@
             {% endif %}
 
         </div>
+        <form action="{% url 'search_results' %}" method="get" class="d-flex editContent">
+                <input type='text' placeholder="Введите название или автора..." name="q" class="form-control search" required="">
+                <button type='submit' class="btn1 btn">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #060505;"></i>
+                </button>
+            </form>
 
-        <a href="{% url 'home' %}"><i class="fa-solid fa-magnifying-glass" style="color: #060505;"></i></a>
 
     </div>
     <div class="content container">

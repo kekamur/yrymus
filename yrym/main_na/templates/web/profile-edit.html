@@ -10,7 +10,7 @@
                         <button class="btn btn-dark">Назад</button>
                         <button type="submit" class="btn btn-success">Подтвердить изменение профиля</button><br><br>
                         <img src="{{ user.profile.avatar.url }}" alt="" class="avatar rounded-pill">
-                        <p><input type="file" name="avatar" maxlength="40"></p><br>
+                        <p><input type="file" name="avatar" maxlength="40" accept="image/jpeg,image/png"></p><br>
                         {{ form.errors }}
                     </div>
                     <div class="col-sm labels">

@@ -342,3 +342,9 @@ a, a:hover{
     margin-right: auto;
     margin-top:100px;
 }
+.loginbtn{
+    background:#c9aac6;
+}
+.loginbtn:hover{
+    background:#cc99c7;
+}
